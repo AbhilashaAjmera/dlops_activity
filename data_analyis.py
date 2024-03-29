@@ -1,10 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
+from sklearn.preprocessing import LabelEncoder
 def load_data(file_path):
     """Load data from a CSV file."""
     try:
         data = pd.read_excel(file_path)
+        data=pd.get_dummies(data,columns=['Class']
         return data
     except FileNotFoundError:
         print("File not found. Please provide a valid file path.")
